@@ -9,6 +9,7 @@ uses:
   * custom Tkinter
   * poo
   * re : "regictions"
+  * Frame
 
 for use interface Admin:
   User : admin
