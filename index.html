@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel</title>
+    <link rel="icon" href="https://p16-common-sign.tiktokcdn.com/tos-alisg-avt-0068/9fbc637299b70ab956828fb3f61f0fc3~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=43bab0cd&x-expires=1781121600&x-signature=W3Q1U%2BzQi%2FuiMAMzVAUseAzgxYk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2&cd=0%7C0%7C0%7C0&se=false" type="image/x-icon">
+    <style>
+        body{
+            background-color:bisque;
+            text-transform: uppercase;
+            font-family: sans-serif;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hidden{
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: bisque;
+            padding: 20px;            
+            border-radius: 10px;
+            width: 96%;
+            height: 95%;
+        }
+        .hidden1{
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: bisque;
+            padding: 20px;            
+            border-radius: 10px;
+            width: 96%;
+            height: 95%;
+        }
+        .hidden1 img{
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        img{
+            width: 500px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        #yes{
+            background-color: green;
+            color: white;
+            border: none;
+        }
+        #no{
+            background-color: red;
+            color: white;
+            border: none;
+        }
+        #yes:hover{
+            background-color: darkgreen;
+        }
+        #no:hover{
+            background-color: darkred;
+        }
+        a{
+            display: block;
+            text-align: center;
+            margin-top: 45px;
+            font-size: 12px;
+            color: black;
+            text-decoration: none;
+        }
+        a:hover{
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <img src="https://c.tenor.com/-5ilyq3Yd9IAAAAC/cute-cats-cutecatz.gif">
+        <h1>do you miss me ?</h1>
+        <div>
+            <button id="yes">YES</button>
+            <button id="no" onmouseenter="transfert()">NO</button>
+        </div>
+    </section>
+    <aside class="hidden">
+        <img src="https://c.tenor.com/YX0_j3GveucAAAAC/tenor.gif">
+        <h1>I misse you too khallty</h1>
+    </aside>
+    <main class="hidden1">
+        <img src="https://media.tenor.com/I0A4JG4CK4kAAAAi/bubu-dudu.gif">
+        <h1>Stop missing with me khaltty</h1>
+    </main>
+    <a href="https://www.tiktok.com/@vetagores">@about me</a>
+    <script>
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+        const hiddenMessage = document.querySelector('.hidden');
+        const hiddenMessage1 = document.querySelector('.hidden1');
+
+        yesButton.addEventListener('click', () => {
+            hiddenMessage.style.display = 'block';
+        });
+
+        let attempts = 0;
+        function transfert() {
+            noButton.style.position = 'absolute';
+            const randomX = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - noButton.offsetHeight));
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+            attempts++;
+            if (attempts >= 5) {
+                hiddenMessage1.style.display = 'block';
+                setTimeout(() => {
+                    hiddenMessage1.style.display = 'none';
+                }, 2000);
+                attempts = 0;
+            }
+        }
+    </script>
+</body>
+</html>
